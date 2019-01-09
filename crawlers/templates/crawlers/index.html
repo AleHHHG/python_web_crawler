@@ -1,0 +1,9 @@
+{% if list_instructions %}
+    <ul>
+    {% for instruction in list_instructions %}
+        <li><a href="{% url 'crawlers:process' instruction.id %}">{{ instruction.get_kind_display }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Não a instruções para serem executadas</p>
+{% endif %} 

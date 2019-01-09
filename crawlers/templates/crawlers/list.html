@@ -1,0 +1,9 @@
+{% if items %}
+    <ul>
+    {% for item in items %}
+        <li><a href="{% url 'crawlers:detail' model_name=model_name id=item.id %}">{{ item.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Não existem mode {{ context.model_name.capitalize}}</p>
+{% endif %} 
